@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsapiserviceService } from 'src/app/services/newsapiservice.service'; //imports service
 
 @Component({
   selector: 'app-topstory',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopstoryComponent implements OnInit {
 
-  constructor() { }
+  constructor( private service:NewsapiserviceService) { }
 
   ngOnInit(): void {
+    this.service.fetchTopStoriesBBC()
   }
 
 }
